@@ -23,6 +23,10 @@ int GCD(int num1, int num2) {
   return GCD(num2 % num1, num1);
 }
 
+int LCM(int num1, int num2) {
+  return (num1 * num2) / GCD(num1, num2);
+}
+
 int main(void) {
   int number, num1, num2;
   printf("enter a number to check if it is even\n");
@@ -40,4 +44,7 @@ int main(void) {
   printf("enter two number separated by space to find gcd of them\n");
   scanf("%d %d", &num1, &num2);
   printf("GCD of %d and %d is %d\n", num1, num2, GCD(num1, num2));
+  printf("enter two number separated by space to find LCM of them\n");
+  scanf("%d %d", &num1, &num2);
+  printf("LCM of %d and %d is %d\n", num1, num2, LCM(num1, num2));
 }
