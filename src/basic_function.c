@@ -40,6 +40,10 @@ double fahrenheit_to_centigrade(double temperature) {
   return (temperature - 32) * 5 / 9;
 }
 
+double centigrade_to_fahrenheit(double temperature) {
+  return (temperature * 9 / 5) + 32;
+}
+
 int main(void) {
   int number, num1, num2;
   double ineterest_rate, time, principal, temperature;
@@ -70,4 +74,7 @@ int main(void) {
   printf("enter a temperature in farenhite to convert to centigrade\n");
   scanf("%lf", &temperature);
   printf("the centigrade value is %lf\n", fahrenheit_to_centigrade(temperature));
+  printf("enter a temperature in centigrade to convert to farenhite\n");
+  scanf("%lf", &temperature);
+  printf("the farenhite value is %lf\n", centigrade_to_fahrenheit(temperature));
 }
