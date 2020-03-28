@@ -12,6 +12,10 @@ int square(int number) {
   return number * number;
 }
 
+int cube(int number) {
+  return number * square(number);
+}
+
 int main(void) {
   int number;
   printf("enter a number to check if it is even\n");
@@ -20,7 +24,10 @@ int main(void) {
   printf("enter a number to check if it is odd\n");
   scanf("%d", &number);
   printf("%d is %s \n", number, is_odd(number) ? "odd" : "Not odd");
-  printf("enter a number to find square of it");
+  printf("enter a number to find square of it\n");
   scanf("%d", &number);
   printf("square of %d is %d\n", number, square(number));
+  printf("enter a number to find cube of it\n");
+  scanf("%d", &number);
+  printf("cube of %d is %d\n", number, cube(number));
 }
