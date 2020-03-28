@@ -44,37 +44,65 @@ double centigrade_to_fahrenheit(double temperature) {
   return (temperature * 9 / 5) + 32;
 }
 
+int find_largest(int num1, int num2, int num3) {
+  int larger = num1 > num2 ? num1 : num2;
+  return larger > num3 ? larger : num3;
+}
+
+double find_average(int num1, int num2, int num3) {
+  return (num1 + num2 + num3) / 3.0;
+}
+
 int main(void) {
-  int number, num1, num2;
+  int number, num1, num2, num3;
   double ineterest_rate, time, principal, temperature;
+
   printf("enter a number to check if it is even\n");
   scanf("%d", &number);
   printf("%d is %s \n", number, is_even(number) ? "even" : "Not even");
+
   printf("enter a number to check if it is odd\n");
   scanf("%d", &number);
   printf("%d is %s \n", number, is_odd(number) ? "odd" : "Not odd");
+
   printf("enter a number to find square of it\n");
   scanf("%d", &number);
   printf("square of %d is %d\n", number, square(number));
+
   printf("enter a number to find cube of it\n");
   scanf("%d", &number);
   printf("cube of %d is %d\n", number, cube(number));
+
   printf("enter two number separated by space to find gcd of them\n");
   scanf("%d %d", &num1, &num2);
   printf("GCD of %d and %d is %d\n", num1, num2, GCD(num1, num2));
+
   printf("enter two number separated by space to find LCM of them\n");
   scanf("%d %d", &num1, &num2);
   printf("LCM of %d and %d is %d\n", num1, num2, LCM(num1, num2));
+
   printf("enter principle, time(in years) and rate of interest accordingly to find simple interest\n");
   scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
   printf("the simple interest is %lf\n", simple_interest(principal, ineterest_rate, time));
+
   printf("enter principle, time(in years) and rate of interest accordingly to find compound interest\n");
   scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
   printf("the compound interest is %lf\n", compound_interest(principal, ineterest_rate, time));
+
   printf("enter a temperature in farenhite to convert to centigrade\n");
   scanf("%lf", &temperature);
   printf("the centigrade value is %lf\n", fahrenheit_to_centigrade(temperature));
+
   printf("enter a temperature in centigrade to convert to farenhite\n");
   scanf("%lf", &temperature);
   printf("the farenhite value is %lf\n", centigrade_to_fahrenheit(temperature));
+
+  printf("enter three numbers seperated by space to find the greatest\n");
+  scanf("%d %d %d", &num1, &num2, &num3);
+  printf("the greatest value is %d\n", find_largest(num1, num2, num3));
+
+  printf("enter three numbers seperated by space to find the average\n");
+  scanf("%d %d %d", &num1, &num2, &num3);
+  printf("the greatest value is %lf\n", find_average(num1, num2, num3));
+
 }
