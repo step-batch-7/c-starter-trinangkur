@@ -36,9 +36,13 @@ double compound_interest(double principal, double interest_rate, double time){
   return principal * pow((1 + interest_rate/100), time) - principal;
 }
 
+double fahrenheit_to_centigrade(double temperature) {
+  return (temperature - 32) * 5 / 9;
+}
+
 int main(void) {
   int number, num1, num2;
-  double ineterest_rate, time, principal;
+  double ineterest_rate, time, principal, temperature;
   printf("enter a number to check if it is even\n");
   scanf("%d", &number);
   printf("%d is %s \n", number, is_even(number) ? "even" : "Not even");
@@ -63,4 +67,7 @@ int main(void) {
   printf("enter principle, time(in years) and rate of interest accordingly to find compound interest\n");
   scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
   printf("the compound interest is %lf\n", compound_interest(principal, ineterest_rate, time));
+  printf("enter a temperature in farenhite to convert to centigrade\n");
+  scanf("%lf", &temperature);
+  printf("the centigrade value is %lf\n", fahrenheit_to_centigrade(temperature));
 }
