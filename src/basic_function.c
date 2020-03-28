@@ -27,8 +27,13 @@ int LCM(int num1, int num2) {
   return (num1 * num2) / GCD(num1, num2);
 }
 
+double simple_interest(double principal, double rate_of_interest, double time){
+  return (principal*rate_of_interest*time)/100;
+}
+
 int main(void) {
   int number, num1, num2;
+  double ineterest_rate, time, principal;
   printf("enter a number to check if it is even\n");
   scanf("%d", &number);
   printf("%d is %s \n", number, is_even(number) ? "even" : "Not even");
@@ -47,4 +52,7 @@ int main(void) {
   printf("enter two number separated by space to find LCM of them\n");
   scanf("%d %d", &num1, &num2);
   printf("LCM of %d and %d is %d\n", num1, num2, LCM(num1, num2));
+  printf("enter principle, time(in years) and rate of interest accordingly to find simple interest\n");
+  scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
+  printf("the simple interest is %lf\n", simple_interest(principal, ineterest_rate, time));
 }
