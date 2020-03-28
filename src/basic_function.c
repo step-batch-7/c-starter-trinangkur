@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 unsigned char is_even(int number) {
   return number % 2 == 0;
@@ -27,8 +28,12 @@ int LCM(int num1, int num2) {
   return (num1 * num2) / GCD(num1, num2);
 }
 
-double simple_interest(double principal, double rate_of_interest, double time){
-  return (principal*rate_of_interest*time)/100;
+double simple_interest(double principal, double interest_rate, double time){
+  return (principal*interest_rate*time)/100;
+}
+
+double compound_interest(double principal, double interest_rate, double time){
+  return principal * pow((1 + interest_rate/100), time) - principal;
 }
 
 int main(void) {
@@ -55,4 +60,7 @@ int main(void) {
   printf("enter principle, time(in years) and rate of interest accordingly to find simple interest\n");
   scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
   printf("the simple interest is %lf\n", simple_interest(principal, ineterest_rate, time));
+  printf("enter principle, time(in years) and rate of interest accordingly to find compound interest\n");
+  scanf("%lf %lf %lf", &principal, &time, &ineterest_rate);
+  printf("the compound interest is %lf\n", compound_interest(principal, ineterest_rate, time));
 }
