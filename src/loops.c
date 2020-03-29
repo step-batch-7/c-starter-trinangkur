@@ -35,8 +35,15 @@ void print_even_series(int limit) {
   printf("\n");
 }
 
+void print_multiplication_table(int multiplicand, int no_of_term) {
+  printf("Multiplication Table of %d upto %d :\n",multiplicand,no_of_term);
+  for(int multiplier = 1; multiplier <= no_of_term; multiplier++) {
+    printf("%d x %d = %d\n", multiplicand, multiplier, multiplicand * multiplier);
+  }
+}
+
 int main (void) {
-  int number;
+  int number, num1, num2;
 
   printf("Enter a number to find factorial of it\n");
   scanf("%d", &number);
@@ -53,4 +60,8 @@ int main (void) {
   printf("enter a number to print all even numbers between 1 and the given number\n");
   scanf("%d", &number);
   print_even_series(number);
+
+  printf("enter multiplicand and limit of table seperated by space respectively\n");
+  scanf("%d %d", &num1, &num2);
+  print_multiplication_table(num1, num2);
 }
