@@ -42,6 +42,14 @@ void print_multiplication_table(int multiplicand, int no_of_term) {
   }
 }
 
+int sum_of_numbers(int start_num, int limit) {
+  int sum = 0;
+  for(int current_num = start_num; current_num < start_num + limit; current_num++) {
+    sum += current_num;
+  }
+  return sum;
+}
+
 int main (void) {
   int number, num1, num2;
 
@@ -64,4 +72,8 @@ int main (void) {
   printf("enter multiplicand and limit of table seperated by space respectively\n");
   scanf("%d %d", &num1, &num2);
   print_multiplication_table(num1, num2);
+
+  printf("Enter number and count separated by space respectively to get sum of numbers\n");
+  scanf("%d %d", &num1, &num2);
+  printf("the factorial is %d\n", sum_of_numbers(num1, num2));
 }
