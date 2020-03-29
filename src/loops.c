@@ -58,6 +58,16 @@ int product_of_numbers(int start_num, int limit) {
   return product;
 }
 
+void print_odd_in_range(int num1, int num2) {
+  printf("Odd Numbers between %d and %d are :",num1, num2);
+  int odd = num1 % 2 == 0 ? num1 + 1 : num1;
+  while(odd <=  num2) {
+    printf("%d ",odd);
+     odd += 2;
+  }
+  printf("\n");
+}
+
 int main (void) {
   int number, num1, num2;
 
@@ -85,4 +95,8 @@ int main (void) {
   scanf("%d %d", &num1, &num2);
   printf("the sum of numbers is %d\n", sum_of_numbers(num1, num2));
   printf("the product of numbers is %d\n", product_of_numbers(num1, num2));
+
+  printf("Enter two numbers separated by space to print all odd in range\n");
+  scanf("%d %d", &num1, &num2);
+  print_odd_in_range(num1, num2);
 }
