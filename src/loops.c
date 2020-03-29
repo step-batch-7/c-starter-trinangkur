@@ -59,7 +59,7 @@ int product_of_numbers(int start_num, int limit) {
 }
 
 void print_odd_in_range(int num1, int num2) {
-  printf("Odd Numbers between %d and %d are :",num1, num2);
+  printf("Odd numbers between %d and %d are :",num1, num2);
   int odd = num1 % 2 == 0 ? num1 + 1 : num1;
   while(odd <=  num2) {
     printf("%d ",odd);
@@ -68,8 +68,16 @@ void print_odd_in_range(int num1, int num2) {
   printf("\n");
 }
 
+void print_nth_numbers(int num1, int num2, int increment_value) {
+  printf("%dth numbers between %d and %d are :\n", increment_value, num1, num2);
+  for(int current = num1; current <= num2; current += increment_value) {
+    printf("%d ",current);
+  }
+  printf("\n");
+}
+
 int main (void) {
-  int number, num1, num2;
+  int number, num1, num2, num3;
 
   printf("Enter a number to find factorial of it\n");
   scanf("%d", &number);
@@ -99,4 +107,8 @@ int main (void) {
   printf("Enter two numbers separated by space to print all odd in range\n");
   scanf("%d %d", &num1, &num2);
   print_odd_in_range(num1, num2);
+
+  printf("Enter tow number and incrementer separated by space respectively\n");
+  scanf("%d %d %d", &num1, &num2, &num3);
+  print_nth_numbers(num1, num2, num3);
 }
