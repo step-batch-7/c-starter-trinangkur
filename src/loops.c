@@ -27,6 +27,14 @@ void print_odd_series(int limit) {
   printf("\n");
 }
 
+void print_even_series(int limit) {
+  printf("even numbers between 1 and %d is :\n",limit);
+  for(int even = 2; even <= limit; even += 2){
+    printf("%d ", even);
+  }
+  printf("\n");
+}
+
 int main (void) {
   int number;
 
@@ -41,4 +49,8 @@ int main (void) {
   printf("enter a number to print all odd numbers between 1 and the given number\n");
   scanf("%d", &number);
   print_odd_series(number);
+  
+  printf("enter a number to print all even numbers between 1 and the given number\n");
+  scanf("%d", &number);
+  print_even_series(number);
 }
