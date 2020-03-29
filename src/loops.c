@@ -19,6 +19,14 @@ void print_fibonacci_series(int terms) {
   printf("\n");
 }
 
+void print_odd_series(int limit) {
+  printf("Odd numbers between 1 and %d is :\n",limit);
+  for(int odd = 1; odd <= limit; odd += 2){
+    printf("%d ", odd);
+  }
+  printf("\n");
+}
+
 int main (void) {
   int number;
 
@@ -29,4 +37,8 @@ int main (void) {
   printf("find fibonacci series of n terms, enter value of n\n");
   scanf("%d", &number);
   print_fibonacci_series(number);
+
+  printf("enter a number to print all odd numbers between 1 and the given number\n");
+  scanf("%d", &number);
+  print_odd_series(number);
 }
