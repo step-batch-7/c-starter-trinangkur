@@ -89,8 +89,7 @@ int sum_of_evens(int num1, int num2) {
 void print_reverse_odds(int num) {
   printf("Odd numbers in reverse from %u to 1(inclusive)--\n",num);
   int odd = num % 2 != 0 ? num : num - 1;
-  while(odd > 0)
-  {
+  while(odd > 0) {
     printf("%d ",odd);
      odd -= 2;
   }
