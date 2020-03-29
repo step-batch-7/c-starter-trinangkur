@@ -76,6 +76,17 @@ void print_nth_numbers(int num1, int num2, int increment_value) {
   printf("\n");
 }
 
+int sum_of_evens(int start_num, int end_num) {
+  int sum = 0;
+  int even = start_num % 2 == 0 ? start_num : start_num + 1;
+  while(even <= end_num) {
+    sum += even;
+    even += 2;
+  }
+  return sum;
+}
+
+
 int main (void) {
   int number, num1, num2, num3;
 
@@ -111,4 +122,8 @@ int main (void) {
   printf("Enter tow number and incrementer separated by space respectively\n");
   scanf("%d %d %d", &num1, &num2, &num3);
   print_nth_numbers(num1, num2, num3);
+
+  printf("Enter two numbers separated by space to get sum of evens\n");
+  scanf("%d %d", &num1, &num2);
+  printf("the sum of even numbers is %d\n", sum_of_evens(num1, num2));
 }
