@@ -76,16 +76,26 @@ void print_nth_numbers(int num1, int num2, int increment_value) {
   printf("\n");
 }
 
-int sum_of_evens(int start_num, int end_num) {
+int sum_of_evens(int num1, int num2) {
   int sum = 0;
-  int even = start_num % 2 == 0 ? start_num : start_num + 1;
-  while(even <= end_num) {
+  int even = num1 % 2 == 0 ? num1 : num1 + 1;
+  while(even <= num2) {
     sum += even;
     even += 2;
   }
   return sum;
 }
 
+void print_reverse_odds(int num) {
+  printf("Odd numbers in reverse from %u to 1(inclusive)--\n",num);
+  int odd = num % 2 != 0 ? num : num - 1;
+  while(odd > 0)
+  {
+    printf("%d ",odd);
+     odd -= 2;
+  }
+  printf("\n");
+}
 
 int main (void) {
   int number, num1, num2, num3;
@@ -126,4 +136,8 @@ int main (void) {
   printf("Enter two numbers separated by space to get sum of evens\n");
   scanf("%d %d", &num1, &num2);
   printf("the sum of even numbers is %d\n", sum_of_evens(num1, num2));
+
+  printf("Enter a number to print all odds in revers till 1\n");
+  scanf("%d", &number);
+  print_reverse_odds(number);
 }
